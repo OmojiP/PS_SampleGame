@@ -25,6 +25,8 @@ public class SpecialAttack : MonoBehaviour
 
     IEnumerator OnButtonClick()
     {
+        _button.interactable = false;
+
         // Attack‚Ü‚Å‚ÌPauseLevel‚ÅˆêŽž’âŽ~‚·‚é‚æ‚¤‚É‚·‚é
         using (PauseSystem.PushPause(PriorityPauseSystem.PauseLevelConstants.Attack))
         {
@@ -46,5 +48,7 @@ public class SpecialAttack : MonoBehaviour
                 ignoreTimeScale: false
             );
         }
+
+        _button.interactable = true;
     }
 }
